@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightBlue"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@color/colorBlue"
+        android:id="@+id/lottoNewNumberLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_marginRight="25dp"
+            android:background="@drawable/qr_selector"
+            android:textSize="10dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/qrCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignLeft="@id/timesLayout2"
+            android:orientation="horizontal"
+            android:id="@+id/timesLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:textSize="30sp"
+                android:id="@+id/times"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp"
+                android:id="@+id/timesDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/timesLayout2"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/timesLayout"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/newNumber1"
+                style="@style/WinningTextViewStyle"/>
+            <TextView
+                android:id="@+id/newNumber2"
+                style="@style/WinningTextViewStyle"/>
+            <TextView
+                android:id="@+id/newNumber3"
+                style="@style/WinningTextViewStyle"/>
+            <TextView
+                android:id="@+id/newNumber4"
+                style="@style/WinningTextViewStyle"/>
+            <TextView
+                android:id="@+id/newNumber5"
+                style="@style/WinningTextViewStyle"/>
+            <TextView
+                android:id="@+id/newNumber6"
+                style="@style/WinningTextViewStyle"/>
+            <TextView
+                android:text="+"
+                style="@style/WinningTextViewStyle"
+                android:textColor="#111111"
+                android:background="@null"/>
+            <TextView
+                android:id="@+id/bonusNumber"
+                style="@style/WinningTextViewStyle"/>
+        </LinearLayout>
+        <View
+            android:layout_below="@id/timesLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_below="@id/lottoNewNumberLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <FrameLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="10dp"
+                android:background="@drawable/round_line_background"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioGroup
+                    android:id="@+id/selectRandomNumberRg"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/selectRandomNumberRb1"
+                        android:text="1"
+                        android:checked="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <RadioButton
+                        android:id="@+id/selectRandomNumberRb2"
+                        android:text="2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <RadioButton
+                        android:id="@+id/selectRandomNumberRb3"
+                        android:text="3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <RadioButton
+                        android:id="@+id/selectRandomNumberRb4"
+                        android:text="4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <RadioButton
+                        android:id="@+id/selectRandomNumberRb5"
+                        android:text="5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RadioGroup>
+            </LinearLayout>
+            <TextView
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@color/colorLightBlue"
+                android:layout_marginLeft="30dp"
+                android:text="출력개수"
+                android:textStyle="bold"
+                android:textColor="@color/colorGrayBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="10dp"
+                android:background="@drawable/round_line_background"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:gravity="center"
+                    android:background="@color/colorBlue"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:id="@+id/select_numbers_btn"
+                    android:text="선택"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:id="@+id/select_numbers_layout"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+            <TextView
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@color/colorLightBlue"
+                android:layout_marginLeft="30dp"
+                android:text="고정번호"
+                android:textStyle="bold"
+                android:textColor="@color/colorGrayBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:scrollbars="vertical"
+            android:orientation="horizontal"
+            android:id="@+id/random1"
+            android:layout_width="match_parent"
+            android:layout_height="57dp">
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv11">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count11" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv12">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count12" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv13">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count13" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv14">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count14" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv15">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count15" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv16">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count16" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="invisible"
+            android:scrollbars="vertical"
+            android:orientation="horizontal"
+            android:id="@+id/random2"
+            android:layout_width="match_parent"
+            android:layout_height="57dp">
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv21">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count21" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv22">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count22" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv23">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count23" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv24">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count24" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv25">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count25" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv26">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count26" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="invisible"
+            android:scrollbars="vertical"
+            android:orientation="horizontal"
+            android:id="@+id/random3"
+            android:layout_width="match_parent"
+            android:layout_height="57dp">
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv31">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count31" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv32">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count32" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv33">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count33" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv34">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count34" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv35">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count35" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv36">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count36" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="invisible"
+            android:scrollbars="vertical"
+            android:orientation="horizontal"
+            android:id="@+id/random4"
+            android:layout_width="match_parent"
+            android:layout_height="57dp">
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv41">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count41" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv42">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count42" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv43">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count43" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv44">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count44" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv45">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count45" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv46">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count46" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="invisible"
+            android:scrollbars="vertical"
+            android:orientation="horizontal"
+            android:id="@+id/random5"
+            android:layout_width="match_parent"
+            android:layout_height="57dp">
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv51">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count51" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv52">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count52" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv53">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count53" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv54">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count54" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv55">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count55" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+            <com.ddoniddoi.lotto.Util.SrcollViewNoTouch
+                style="@style/ScrollViewStyle"
+                android:id="@+id/sv56">
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:id="@+id/count56" />
+            </com.ddoniddoi.lotto.Util.SrcollViewNoTouch>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/shakeImgLayout"
+        android:layout_marginBottom="10dp"
+        android:alpha="0.5"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/shake_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="흔들면 복이와요"/>
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_id">
+    </com.google.android.gms.ads.AdView>
+
+
+
+</RelativeLayout>

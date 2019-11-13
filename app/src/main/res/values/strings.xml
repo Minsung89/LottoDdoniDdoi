@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">로또대또</string>
+    <string name="admob_id">ca-app-pub-1937109101300885~2018457789</string>
+    <string name="interstitial_id">ca-app-pub-1937109101300885/2929290170</string>
+    <string name="test_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="banner_id">ca-app-pub-1937109101300885/8900296994</string>
+    <string name="test_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+
+</resources>
